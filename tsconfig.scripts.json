@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "outDir": ".tsbuild"
+  },
+  "include": [
+    "src/scripts/**/*.ts",
+    "src/utils/supabase/**/*.ts"
+  ]
+}

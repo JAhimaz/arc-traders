@@ -1,0 +1,74 @@
+.tradeSetupBox {
+  border: 1px solid grey;
+  border-radius: 10px;
+  background-color: var(--foreground);
+  width: fit-content;
+  height: fit-content;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tradeDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  gap: 1rem;
+  color: black;
+  box-sizing: border-box;
+}
+
+/* recommended global reset */
+
+.offerSection {
+  display: grid;
+  grid-template-columns: repeat(4, 90px);
+  grid-template-rows: repeat(4, 90px);
+  gap: 5px;
+  box-sizing: border-box;
+}
+
+.offerItem {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+  background: grey;
+  display: flex;
+  place-content: center;
+  position: relative;
+  border: 1px solid grey;
+  box-sizing: border-box;
+  /* include border in 90px */
+}
+
+.offerItemIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  
+}
+
+.offerItemQuantity {
+  color: white;
+  position: absolute;
+  bottom: 0.25rem;
+  right: 0.25rem;
+}
+
+.emptySlot {
+  border: 2px solid rgb(77, 77, 77);
+  border-radius: 10px;
+  transition: border 0.2s ease;
+}
+
+.active .emptySlot {
+  border: 2px solid grey;
+}

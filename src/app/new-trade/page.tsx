@@ -3,14 +3,10 @@ import styles from "./page.module.css";
 import ItemSearch from "@/components/ItemSearch/ItemSearch";
 import NewTrade from "@/components/NewTrade/NewTrade";
 
-export default function Home() {
+export default function NewTradePage() {
   return (
     <div className={styles.page}>
-      {/* Navigation */}
-
-
-      {/* Top Reputation */}
-
+      <NewTrade />
     </div>
   );
 }
