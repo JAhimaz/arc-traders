@@ -1,5 +1,5 @@
 .tradeSetupBox {
-  border: 1px solid grey;
+  border: 1px solid var(--text);
   border-radius: 10px;
   background-color: var(--foreground);
   width: fit-content;
@@ -10,6 +10,11 @@
   gap: 1rem;
   box-sizing: border-box;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+  font-size: 1.5rem;
+  color: var(--text);
 }
 
 .tradeDetails {
@@ -31,6 +36,21 @@
   grid-template-rows: repeat(4, 90px);
   gap: 5px;
   box-sizing: border-box;
+}
+
+.offerInfoBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.offerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--dim);
+
 }
 
 .offerItem {
@@ -64,11 +84,59 @@
 }
 
 .emptySlot {
-  border: 2px solid rgb(77, 77, 77);
+  border: 2px solid var(--dim);
   border-radius: 10px;
   transition: border 0.2s ease;
 }
 
+.active {
+  color: var(--text);
+}
+
 .active .emptySlot {
-  border: 2px solid grey;
+  border: 2px solid var(--dim-slot);
+}
+
+/* Platforms */
+
+.platformItem {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  border-radius: 10px;
+  border: 2px solid var(--dim);
+}
+
+.platformIcon {
+  width: 30px;
+  height: 30px;
+  color: var(--dim);
+  transition: all 0.2s ease;
+}
+
+.platformItem:hover {
+  cursor: pointer;
+  background: var(--highlight);
+  border: 2px solid var(--text);
+}
+
+.platformItem:hover .platformIcon {
+  color: var(--text);
+}
+
+.platformSection {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.selectedPlatform {
+  border: 2px solid var(--text);
+
+  & > .platformIcon {
+    color: var(--text);
+  }
 }

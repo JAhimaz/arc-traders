@@ -12,6 +12,7 @@
     color: var(--text);
   background-color: var(--foreground);
   border-radius: 10px;
+  padding-left: 36px; /* space for the search icon */
 }
 
 .searchInputBar:focus {
@@ -69,4 +70,45 @@
   padding: 10px;
   color: #666;
   font-size: 14px;
+}
+
+.searchIcon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.searchIconItem {
+  color: var(--dim);
+  transition: all 0.2s ease;
+  transform: rotate(20deg);
+}
+
+.searchInputBar:focus + .searchIcon .searchIconItem {
+  color: var(--text);
+  transform: rotate(0deg);
+} 
+
+.loadingRow {
+  padding: 10px;
+  color: transparent;
+  animation: pulse 1.5s infinite;
+  font-size: 14px;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: var(--background);
+  }
+  50% {
+    background-color: var(--highlight);
+  }
+  100% {
+    background-color: var(--background);
+  }
 }

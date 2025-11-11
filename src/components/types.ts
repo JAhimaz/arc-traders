@@ -9,3 +9,5 @@ export type Item = {
   rarity: string;
   value: number;
 }
+
+export type Platforms = 'steam' | 'playstation' | 'xbox';

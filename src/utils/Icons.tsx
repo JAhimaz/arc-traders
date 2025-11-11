@@ -1,27 +1,11 @@
 "use client";
 
 import { CSSProperties, FC } from "react";
-import { FaTicket, FaHubspot } from "react-icons/fa6";
-import { BsPeopleFill } from "react-icons/bs";
-import { RiRobot2Fill, RiTestTubeFill } from "react-icons/ri";
-import { FaWallet, FaHandHoldingWater, FaQuestion, FaTelegramPlane  } from "react-icons/fa";
-import { MdRocketLaunch } from "react-icons/md";
-import { GiPayMoney } from "react-icons/gi";
-import { GrLinkNext } from "react-icons/gr";
+import { FaPlaystation, FaSteam, FaXbox, FaSearch } from "react-icons/fa";
+
 
 const IconsIndex = {
-  ticket: FaTicket,
-  persons: BsPeopleFill,
-  bot: RiRobot2Fill,
-  wallet: FaWallet,
-  testnet: RiTestTubeFill,
-  mainnet: MdRocketLaunch,
-  supply: FaHandHoldingWater,
-  demand: GiPayMoney,
-  question: FaQuestion,
-  arrowRight: GrLinkNext,
-  hubspot: FaHubspot,
-  telegram: FaTelegramPlane
+  search: FaSearch,
 };
 
 const EventIndex = {
@@ -29,7 +13,9 @@ const EventIndex = {
 }
 
 const SocialsIndex = {
-  //
+  steam: FaSteam,
+  playstation: FaPlaystation,
+  xbox: FaXbox
 }
 
 const Index = {

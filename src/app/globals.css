@@ -2,7 +2,9 @@
   --background: #0e0c14;
   --foreground: #0b0d18;
   --highlight: #131629;
-  --text: #f1f1f1;
+  --text: #c4c4c4;
+  --dim-slot: #8f8f8f;
+  --dim: #4d4d4d;
 }
 
 html,

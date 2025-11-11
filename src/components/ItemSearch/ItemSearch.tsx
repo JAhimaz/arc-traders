@@ -4,6 +4,7 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './ItemSearch.module.css';
 import type { Item } from '../types'; // <-- import shared Item type
+import { Icon } from '@/utils/Icons';
 
 type ItemSearchProps = {
   onSelect?: (item: Item) => void; // <-- return whole item
@@ -52,15 +53,15 @@ export default function ItemSearch({
       setLoading(true);
 
       try {
+        setOpen(true);
         const res = await fetch(`/api/items/search?q=${encodeURIComponent(query)}`, {
           signal: controller.signal,
         });
         if (!res.ok) throw new Error('Failed to fetch');
-
+        
         // Expecting API to return full Item[]
         const data: Item[] = await res.json();
         setResults(data);
-        setOpen(true);
       } catch (err: any) {
         if (err.name !== 'AbortError') console.error(err);
       } finally {
@@ -99,9 +100,13 @@ export default function ItemSearch({
         aria-controls="item-search-results"
       />
 
+      <div className={styles.searchIcon}>
+        <Icon icon="search" className={styles.searchIconItem}/>
+      </div>
+
       {open && (
         <div className={styles.dropdown} role="listbox" id="item-search-results">
-          {loading && <div className={styles.statusRow}>Loading...</div>}
+          {loading && <div className={styles.loadingRow}>Loading...</div>}
 
           {!loading && results.length > 0 && (
             <ul className={styles.resultsList}>
