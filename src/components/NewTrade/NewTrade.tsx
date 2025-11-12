@@ -4,9 +4,10 @@ import { useState } from 'react';
 import styles from './NewTrade.module.css';
 import ItemSearch from '../ItemSearch/ItemSearch';
 import { Item, Platforms } from '../types';
-import ArcItem from '../common/Item';
+import ArcItem from '../common/Item/Item';
 import Image from 'next/image';
 import { Icon, IconName } from '@/utils/Icons';
+import Button from '../common/Button/Button';
 
 type SelectedItem = {
   item: Item;
@@ -23,7 +24,11 @@ const PLATFORMS: {
   { key: 'xbox', icon: 'xbox', label: 'Xbox' },
 ]
 
-export default function NewTrade() {
+type Props = {
+  onClose?: () => void;
+};
+
+export default function NewTrade({ onClose }: Props) {
   const [offerItems, setOfferItems] = useState<SelectedItem[]>([]);
   const [requestItems, setRequestItems] = useState<SelectedItem[]>([]);
   const [isRequesting, setIsRequesting] = useState(false);
@@ -60,15 +65,17 @@ const setQty = (
 
   return (
     <section className={styles.tradeSetupBox}>
-      <span className={styles.title}>New Trade Request</span>
-      <section id="platform" className={styles.platformSection}>
-        {PLATFORMS.map(platform => (
-          <div key={platform.key} className={`${styles.platformItem} ${selectedPlatform === platform.key ? styles.selectedPlatform : ''}`}
-          onClick={() => setSelectedPlatform(platform.key)}
-          >
-            <Icon icon={platform.icon} className={styles.platformIcon} />
-          </div>
-        ))}
+      <section id="platform" className={styles.informationSection}>
+        <span className={styles.title}>New Trade Request</span>
+        <div className={styles.platformSection}>
+          {PLATFORMS.map(platform => (
+            <div key={platform.key} className={`${styles.platformItem} ${selectedPlatform === platform.key ? styles.selectedPlatform : ''}`}
+            onClick={() => setSelectedPlatform(platform.key)}
+            >
+              <Icon icon={platform.icon} className={styles.platformIcon} />
+            </div>
+          ))}
+        </div>
       </section>
       <ItemSearch
         onSelect={(item) => handleAddItem({ item, quantity: 1 })}
@@ -147,6 +154,14 @@ const setQty = (
             ))}
           </section>
         </section>
+      </div>
+      <div className={styles.actionButtons}>
+        <Button type="secondary" onClick={onClose}>
+          Cancel
+        </Button>
+        <Button type="primary">
+          Submit Trade offer
+        </Button>
       </div>
     </section>
   );

@@ -1,0 +1,86 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+
+  & > * {
+    flex: 1;
+  }
+}
+
+.centerNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navItem {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--dim-slot);
+  transition: color 0.3s ease;
+  border-radius: 30px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.navItem:hover {
+  border: 2px solid var(--dim-slot);
+}
+
+.active {
+  color: var(--text);
+  border-color: var(--text);
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.userIcon {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  color: var(--dim-slot);
+  transition: all 0.15s ease-in-out;
+}
+
+.userIcon:hover {
+  color: var(--text);
+}
+
+/* New Trade */
+.newTrade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}

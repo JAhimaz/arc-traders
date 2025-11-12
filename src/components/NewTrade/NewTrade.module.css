@@ -1,7 +1,11 @@
 .tradeSetupBox {
+  position: relative;
+  z-index: 5;
   border: 1px solid var(--text);
   border-radius: 10px;
-  background-color: var(--foreground);
+  /* background color with 0.5 opacity */
+  background: var(--foreground-glass);
+  backdrop-filter: blur(2px);
   width: fit-content;
   height: fit-content;
   padding: 1rem;
@@ -9,7 +13,7 @@
   flex-direction: column;
   gap: 1rem;
   box-sizing: border-box;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 .title {
@@ -127,8 +131,16 @@
   color: var(--text);
 }
 
+.informationSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .platformSection {
   display: flex;
+  flex-direction: row;
   gap: 0.5rem;
   justify-content: flex-end;
 }
@@ -139,4 +151,12 @@
   & > .platformIcon {
     color: var(--text);
   }
+}
+
+.actionButtons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 0.5rem;
+  justify-content: flex-end;
 }

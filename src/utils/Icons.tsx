@@ -2,10 +2,12 @@
 
 import { CSSProperties, FC } from "react";
 import { FaPlaystation, FaSteam, FaXbox, FaSearch } from "react-icons/fa";
+import { RiLogoutBoxRLine } from "react-icons/ri";
 
 
 const IconsIndex = {
   search: FaSearch,
+  disconnect: RiLogoutBoxRLine
 };
 
 const EventIndex = {

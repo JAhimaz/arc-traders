@@ -1,6 +1,6 @@
 "use client";
 import styles from "./Item.module.css";
-import type { Item } from "../types";
+import type { Item } from "../../types";
 
 type Props = {
   item: Item;

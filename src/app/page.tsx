@@ -1,16 +1,11 @@
-import Image from "next/image";
 import styles from "./page.module.css";
-import ItemSearch from "@/components/ItemSearch/ItemSearch";
-import NewTrade from "@/components/NewTrade/NewTrade";
+import Homepage from "@/components/Pages/Homepage/Homepage";
 
 export default function Home() {
+
   return (
     <div className={styles.page}>
-      {/* Navigation */}
-
-
-      {/* Top Reputation */}
-
+      <Homepage />
     </div>
   );
 }

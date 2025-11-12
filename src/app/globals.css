@@ -1,10 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
-  --background: #0e0c14;
-  --foreground: #0b0d18;
+  --background: rgb(14, 12, 20);
+  --foreground: rgb(11, 13, 24);
+  --foreground-glass: rgba(11,
+      13,
+      24, 0.2);
   --highlight: #131629;
   --text: #c4c4c4;
+  --black: #0f0f0f;
   --dim-slot: #8f8f8f;
   --dim: #4d4d4d;
+  --button: #fcbf16;
+  --button-secondary: #686666;
 }
 
 html,
@@ -13,12 +21,51 @@ body {
   overflow-x: hidden;
 }
 
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/images/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+  z-index: -1;
+}
+
+.footer {
+  padding: 1rem;
+  font-size: 0.75rem;
+  color: var(--dim);
+  text-align: center;
+  user-select: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.75;
+  }
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 * {
