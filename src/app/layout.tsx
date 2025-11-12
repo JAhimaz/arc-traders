@@ -20,7 +20,7 @@ export default function RootLayout({
         <main className="main">
           <Navigation />
           {children}
-          <footer className="footer">Arc Traders is an independent project and is not affiliated with or endorsed by Embark Studios or Arc Raiders.</footer>
+          <footer className="footer">Arc Traders is an independent project and is not affiliated with or endorsed by Embark Studios or Arc Raiders. We do not promote RWT, please report the user if you see any suspicious activity.</footer>
         </main>
       </body>
     </html>

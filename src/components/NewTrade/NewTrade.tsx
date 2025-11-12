@@ -155,6 +155,7 @@ const setQty = (
           </section>
         </section>
       </div>
+      <span id="disclaimer" className={styles.disclaimer}>Trading <strong>more than 1 item</strong> at a time increases the risk of losing them. Please check the <strong>Player Reputation</strong> or do <strong>Multiple Small Trades</strong>.</span>
       <div className={styles.actionButtons}>
         <Button type="secondary" onClick={onClose}>
           Cancel

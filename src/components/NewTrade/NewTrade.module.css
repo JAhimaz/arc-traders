@@ -1,3 +1,7 @@
+/* Mobile View */
+
+
+
 .tradeSetupBox {
   position: relative;
   z-index: 5;
@@ -14,6 +18,14 @@
   gap: 1rem;
   box-sizing: border-box;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.disclaimer {
+  font-size: 0.75rem;
+  color: var(--warning);
+  text-align: right;
+  text-wrap: wrap;
+  width: 100%;
 }
 
 .title {
@@ -159,4 +171,5 @@
   width: 100%;
   gap: 0.5rem;
   justify-content: flex-end;
+
 }
